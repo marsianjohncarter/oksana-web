@@ -1,15 +1,25 @@
+/* eslint-disable react/prop-types */
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+ 
+import { Alert, Button } from "@material-tailwind/react";
+ 
+const changeClasses = (classesRemove, classesAdd) => {
+
+}
+
 
 export const ContactUs = () => {
   const form = useRef();
-
+  let alert = <></>;
   const sendEmail = (e) => {
     e.preventDefault();
-
-
-
-    emailjs
+    if (!form.current.user_name.value || !form.current.message.value || !form.current.user_email.value) {
+      return <AlertDismissible open={true} message={'Please enter valid data.'}/>
+      
+    } else {
+      alert = <></>;
+      emailjs
       .send(
         "service_74uzx2b",
         "template_4gc56rp",
@@ -24,15 +34,26 @@ export const ContactUs = () => {
       .then(
         () => {
           console.log("SUCCESS!");
+          form.current.user_name.value = '';
+          form.current.message.value = '';
+          form.current.user_email.value = '';
         },
         (error) => {
           console.log("FAILED...", error);
+          form.current.user_name.value = '';
+          form.current.message.value = '';
+          form.current.user_email.value = '';
         }
       );
+    return <></>
+
+    }
+
+
   };
 
   return (
-    // <form ref={form} onSubmit={sendEmail}>
+        // <form ref={form} onSubmit={sendEmail}>
     //   <label>Name</label>
     //   <input type="text" name="user_name" />
     //   <label>Email</label>
@@ -41,7 +62,10 @@ export const ContactUs = () => {
     //   <textarea name="message" />
     //   <input type="submit" value="Send" />
     // </form>
+    <>
+   
     <div className="mt-8 lg:w-1/2 lg:mx-6">
+      
       <div className="visible xs:invisible sm:invisible md:visible lg:visible xl:visible w-full px-8 py-10 mx-auto overflow-hidden bg-white shadow-2xl rounded-xl dark:bg-gray-900 lg:max-w-xl">
         <h1 className="text-xl font-medium text-gray-700 dark:text-gray-200">
           Contact form
@@ -88,5 +112,6 @@ export const ContactUs = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };

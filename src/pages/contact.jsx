@@ -12,6 +12,8 @@ const Contact = () => {
   return (
     <>
     <AppBar navigation={navigation} />
+
+
       <section
         className="min-h-screen bg-cover "
         style={{
@@ -20,6 +22,8 @@ const Contact = () => {
         }}
       >
         <div className="flex flex-col min-h-screen bg-black/60">
+  
+
           <div className="container flex flex-col flex-1 px-6 py-12 mx-auto">
             <div className="flex-1 lg:flex lg:items-center lg:-mx-6">
               <div className="text-white lg:w-1/2 lg:mx-6">
