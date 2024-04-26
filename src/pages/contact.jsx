@@ -28,17 +28,12 @@ const Contact = () => {
             <div className="flex-1 lg:flex lg:items-center lg:-mx-6">
               <div className="text-white lg:w-1/2 lg:mx-6">
                 <h1 className="text-2xl font-semibold capitalize lg:text-3xl">
-                  Ultimate design solution
+                Контакт
                 </h1>
                 <p className="max-w-xl mt-6">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Voluptatem quo aliquid molestiae hic incidunt beatae placeat
-                  accusantium! Alias ex quisquam ab tempora. Ratione autem
-                  doloremque ducimus numquam doloribus, error sed.
+                Если вас заинтересовало то, что я предлагаю, свяжитесь со мной по адресу example@example.com.
                 </p>
-                <button className="px-8 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
-                  get in touch
-                </button>
+
                 <div className="mt-6 md:mt-8">
                   <h3 className="text-gray-300 ">Follow us</h3>
                   <div className="flex mt-4 -mx-1.5 ">
